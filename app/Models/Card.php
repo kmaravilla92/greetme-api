@@ -18,23 +18,16 @@ class Card extends Base
 
     public function template(): BelongsTo
     {
-        return $this->belongsTo(
-            CardTemplate::class,
-            'card_template_id'
-        );
+        return $this->belongsTo(CardTemplate::class,'card_template_id');
     }
 
     public function signs()
     {
-        return $this->hasMany(
-            CardSign::class
-        );
+        return $this->hasMany(CardSign::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(
-            User::class
-        );
+        return $this->belongsTo(User::class);
     }
 }
